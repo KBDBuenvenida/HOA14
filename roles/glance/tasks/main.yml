@@ -1,0 +1,13 @@
+- name: Installation Glance
+  apt:
+    name:
+      - glance
+    state: latest
+    update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+
+- name: Start Glance
+  service:
+    name: glance-api
+    state: restarted
+    enabled: yes

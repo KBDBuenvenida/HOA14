@@ -1,0 +1,15 @@
+---
+
+- hosts: Ubuntu
+  become: true
+  roles:
+    - keystone
+    - glance
+    - nova
+
+- hosts: CentOS
+  become: true
+  roles:
+    - keystone
+    - glance
+    - nova
